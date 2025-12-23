@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy-First AI Masking Demo</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <h1>Privacy-First AI Masking Layer Demo</h1>
+    <p>
+      Enter your message below. Sensitive data will be masked before AI
+      analysis.
+    </p>
+
+    <div>
+      <label for="user-input">Message:</label><br />
+      <textarea
+        id="user-input"
+        rows="4"
+        cols="50"
+        placeholder="Type your message here..."
+      ></textarea
+      ><br />
+      <button id="analyze-btn">Analyze Safely</button>
+    </div>
+
+    <h2>Results</h2>
+
+    <div id="user-view">
+      <h3>User View</h3>
+      <p id="original-text">Original input will appear here.</p>
+    </div>
+
+    <div id="ai-view">
+      <h3>AI View (Masked)</h3>
+      <p id="masked-text">Masked text will appear here.</p>
+    </div>
+
+    <div id="detected-items">
+      <h3>Detected Sensitive Data</h3>
+      <ul id="sensitive-list">
+        <li>No sensitive data detected yet.</li>
+      </ul>
+    </div>
+
+    <div id="analysis-result">
+      <h3>AI Analysis Result</h3>
+      <pre id="analysis-json">Analysis will appear here.</pre>
+    </div>
+
+    <script src="static/script.js"></script>
+  </body>
+</html>
