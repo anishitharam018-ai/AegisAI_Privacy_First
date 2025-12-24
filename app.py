@@ -52,7 +52,7 @@ Message:
 
     def _call_model(model_name):
         return client.models.generate_content(model=model_name, contents=prompt)
-
+    response = None
     last_error = None
     for attempt in range(max_retries + 1):
         try:
@@ -143,4 +143,4 @@ def analyze():
     return jsonify(result)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',port=5000)
