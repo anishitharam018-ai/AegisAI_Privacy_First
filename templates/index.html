@@ -3,51 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy-First AI Masking Demo</title>
+    <title>AegisAI – Privacy-First AI Masking</title>
     <link rel="stylesheet" href="static/style.css" />
   </head>
-  <body>
-    <h1>Privacy-First AI Masking Layer Demo</h1>
-    <p>
-      Enter your message below. Sensitive data will be masked before AI
-      analysis.
-    </p>
 
-    <div>
-      <label for="user-input">Message:</label><br />
+  <body>
+    <!-- Header -->
+    <header class="app-header">
+      <h1>AegisAI</h1>
+      <p class="subtitle">
+        Privacy-first AI masking layer — sensitive data is removed <strong>before</strong> analysis
+      </p>
+    </header>
+
+    <!-- Input Section -->
+    <section class="card input-card">
+      <label for="user-input">Paste message for analysis</label>
       <textarea
         id="user-input"
-        rows="4"
-        cols="50"
-        placeholder="Type your message here..."
-      ></textarea
-      ><br />
-      <button id="analyze-btn">Analyze Safely</button>
-    </div>
+        rows="5"
+        placeholder="Paste the message here..."
+      ></textarea>
 
-    <h2>Results</h2>
+      <div class="input-footer">
+        <span class="hint">
+          Phone numbers, emails & payment info will be masked automatically
+        </span>
+        <button id="analyze-btn">🔒 Mask Data & Analyze</button>
+      </div>
+    </section>
 
-    <div id="user-view">
-      <h3>User View</h3>
-      <p id="original-text">Original input will appear here.</p>
-    </div>
+    <!-- Results -->
+    <h2 class="section-title">Results</h2>
 
-    <div id="ai-view">
-      <h3>AI View (Masked)</h3>
-      <p id="masked-text">Masked text will appear here.</p>
-    </div>
+    <!-- Side-by-side views -->
+    <section class="grid-2">
+      <div id="user-view" class="card">
+        <h3>User View</h3>
+        <small class="muted">What you entered</small>
+        <p id="original-text">Original input will appear here.</p>
+      </div>
 
-    <div id="detected-items">
-      <h3>Detected Sensitive Data</h3>
+      <div id="ai-view" class="card">
+        <h3>AI View (Masked)</h3>
+        <small class="muted">What the AI actually sees</small>
+        <p id="masked-text">Masked text will appear here.</p>
+      </div>
+    </section>
+
+    <!-- Privacy Summary -->
+    <section id="detected-items" class="card">
+      <h3>Privacy Protection Summary</h3>
       <ul id="sensitive-list">
-        <li>No sensitive data detected yet.</li>
+        <li class="safe">No sensitive data detected yet.</li>
       </ul>
-    </div>
+    </section>
 
-    <div id="analysis-result">
-      <h3>AI Analysis Result</h3>
+    <!-- AI Result -->
+    <section id="analysis-result" class="card muted-card">
+      <h3>AI Analysis (on masked data)</h3>
       <pre id="analysis-json">Analysis will appear here.</pre>
-    </div>
+    </section>
 
     <script src="static/script.js"></script>
   </body>
